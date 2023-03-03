@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -29,11 +29,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int counter = 0;
 
   void _incrementCounter() {
+    int value;
     setState(() {
-      _counter++;
+      counter++;
     });
   }
 
@@ -47,18 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
             ),
-            const Text(
+            Text(
               'You have pushed the button this many times:',
             ),
-            const Text(
+            Text(
               'You have pushed the button this many times:',
             ),
             ElevatedButton(onPressed: () {}, child: const Text("Hi")),
             Text(
-              '$_counter',
+              '$counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }
